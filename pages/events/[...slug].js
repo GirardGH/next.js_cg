@@ -5,3 +5,5 @@ function FilteredEventsPage() {
         </div>
     );
 }
+
+export default FilteredEventsPage;
