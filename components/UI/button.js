@@ -1,11 +1,20 @@
 import Link from "next/link";
 import classes from "./button.module.css";
+import { Fragment } from "react";
 
-function Button({ link, children }) {
+function Button({ link, children, onClick }) {
   return (
-    <Link href={link} legacyBehavior>
-      <a className={classes.btn}>{children}</a>
-    </Link>
+    <Fragment>
+      {link ? (
+        <Link href={link} legacyBehavior>
+          <a className={classes.btn}>{children}</a>
+        </Link>
+      ) : (
+        <button className={classes.btn} onClick={onClick}>
+          {children}
+        </button>
+      )}
+    </Fragment>
   );
 }
 
